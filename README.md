@@ -4,16 +4,27 @@
 
 ## Introduction
 
-In this project, I built a mini honeynet in Azure and ingested log sources from various resources into a Log Analytics workspace, which was then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 12 hours, applied some security controls to harden the environment, measured metrics for another 12 hours, and then showed the results below. The metrics I will show are:
+In this project, I built a mini honeynet in Azure and ingested log sources from various resources into a Log Analytics workspace, which was then used by Microsoft Sentinel to build attack maps(based on imported GeoIp data), trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 12 hours, applied some security controls to harden the environment, measured metrics for another 12 hours, and then showed the results below.
 
+##Lab Metrics:
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Log Analytics Alerts Triggered)
 - SecurityIncident (Incidents created by Sentinel)
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
+## Honeynet Architecture:
+
+- Virtual Network (VNet)
+- Network Security Group (NSG)
+- Virtual Machines (1 windows, 1 linux)
+- Log Analytics Workspace
+- Azure Key Vault
+- Azure Storage Account
+- Microsoft Sentinel
+
 ## Architecture Before Hardening / Security Controls
-<b> For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups configured to <ins>Allow All INBOUND Traffic</ins>, leaving them completely vulnerable! </b>
+<b> For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups configured to <ins>Allow All INBOUND Traffic</ins>, and the storage and key vault had no endpoint protection, leaving them completely vulnerable! </b>
 <b> </b>
 
 ![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/1f0357e8-4889-45a7-9645-943f8bd40d18)
@@ -31,16 +42,6 @@ In this project, I built a mini honeynet in Azure and ingested log sources from 
 
 
 
-
-The architecture of the mini honeynet in Azure consists of the following components:
-
-- Virtual Network (VNet)
-- Network Security Group (NSG)
-- Virtual Machines (1 windows, 1 linux)
-- Log Analytics Workspace
-- Azure Key Vault
-- Azure Storage Account
-- Microsoft Sentinel
 
 ## Attack Maps Before Hardening / Security Controls
 ![nsg-malicious-allowed-in](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/a7c68013-9b57-4020-bc21-c4e7ddc3809a)
@@ -81,6 +82,8 @@ Stop Time	2024-01-03 23:00:12
 | SecurityAlert            | 0
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
+
+## Further Hardening Actions: 
 
 ## Conclusion
 
