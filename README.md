@@ -90,4 +90,5 @@ The following table shows the metrics I measured in my environment for another 1
 
 In this project, I constructed a honeynet using Microsoft Azure and collected logs in a Log Analytics workspace. Microsoft Sentinel was used to create attack maps and trigger alerts. Additionally, metrics were measured in the insecure environment before security controls were applied and then measured again after I hardened the network. Security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
 <b> </b>
-Thanks for viewing, this lab was creat
+
+Thanks for viewing!
