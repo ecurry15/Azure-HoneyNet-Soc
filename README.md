@@ -13,11 +13,19 @@ In this project, I built a mini honeynet in Azure and ingested log sources from 
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
-![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/87699bc4-25e8-421d-8864-a9b187db51b4)
+<b> For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups configured to <ins>Allow All INBOUND Traffic</ins>, leaving them completely vulnerable! </b>
+<b> </b>
+
+![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/1f0357e8-4889-45a7-9645-943f8bd40d18)
+
+![AllowAnyRule](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/92a35efd-03fa-4d92-ade6-e7ff2608a93e)
 
 
 
 ## Architecture After Hardening / Security Controls
+<b>For the "AFTER" metrics, Network Security Groups were hardened by deleting the previous inbound rule, and by creating a new rule to block ALL traffic except for my IP address. I also created private endpoints on all other resources and created a Network Security Group for the network's subnet. </b>
+<b> </b>
+
 ![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/5ceafa04-f5a7-4632-be8f-3bc912241abb)
 ![Nslookup](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/48d91258-7a50-4884-a6ad-14bea4b434b7)
 
@@ -33,10 +41,6 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Key Vault
 - Azure Storage Account
 - Microsoft Sentinel
-
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups configured with a firewall rule to Allow All traffic, leaving them completely vulnerable.
-
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
 ![nsg-malicious-allowed-in](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/a7c68013-9b57-4020-bc21-c4e7ddc3809a)
