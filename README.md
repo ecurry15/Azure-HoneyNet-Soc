@@ -71,7 +71,7 @@ Stop Time 2024-01-01 01:54:40
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
+The following table shows the metrics I measured in my environment for another 12 hours, but after I have applied security controls:
 Start Time 2024-01-02 23:00:12
 Stop Time	2024-01-03 23:00:12
 
@@ -83,10 +83,20 @@ Stop Time	2024-01-03 23:00:12
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
 
-## Further Hardening Actions: 
+## Further Hardening Steps: 
+
+- I enabled <ins>Microsoft Defender for Cloud</ins> and followed a few of the configuration recommendations like : 
+  - Enabled multi-factor Authentication
+  - Configured Machines to automatically check for updates
+- I enabled <ins>NIST SP 800-53</ins> and fulfilled the standards associated with <ins>AC-5 Separation of Duties</ins>
+
+<b> </b>
+
+![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/ae0ac78c-b3b5-4b40-8b59-4d2c31fe6590)
+
 
 ## Conclusion
 
 In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
 
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
+It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 12-hour period following the implementation of the security controls.
