@@ -4,9 +4,9 @@
 
 ## Introduction
 
-In this project, I built a mini honeynet in Azure and ingested logs from various resources into a Log Analytics workspace, which was then used by Microsoft Sentinel to build attack maps(based on imported GeoIp data), trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 12 hours, applied some security controls to harden the environment, measured metrics for another 12 hours, and then showed the results below.
+Hello everyone! In this project, I built a mini honeynet in Azure and ingested logs from various resources into a Log Analytics workspace. I then used the logs and Microsoft Sentinel to build attack maps(based on imported GeoIp data), trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 12 hours, applied some security controls to harden the environment, measured metrics for another 12 hours, and then showed the results below. This was a very interesting lab that helped further my skills in Azure, Cloud Security, Incident Response, and NIST SP 800-53.
 
-##Lab Metrics:
+## Lab Metrics:
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Log Analytics Alerts Triggered)
@@ -17,7 +17,7 @@ In this project, I built a mini honeynet in Azure and ingested logs from various
 
 - Virtual Network (VNet)
 - Network Security Group (NSG)
-- Virtual Machines (1 windows, 1 linux)
+- Virtual Machines (1 Windows, 1 Linux)
 - Log Analytics Workspace
 - Azure Key Vault
 - Azure Storage Account
@@ -88,4 +88,6 @@ The following table shows the metrics I measured in my environment for another 1
 
 ## Conclusion
 
-In this project, I constructed a honeynet using Microsoft Azure and collected logs in a Log Analytics workspace. Microsoft Sentinel was used to create attack maps and trigger alerts. Additionally, metrics were measured in the insecure environment before security controls were applied and then measured again after I hardened the network. Security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness. If the resources within the network were heavily utilized by regular users, more security events and alerts may likely have been generated within the 12-hour period following the implementation of the security controls.
+In this project, I constructed a honeynet using Microsoft Azure and collected logs in a Log Analytics workspace. Microsoft Sentinel was used to create attack maps and trigger alerts. Additionally, metrics were measured in the insecure environment before security controls were applied and then measured again after I hardened the network. Security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+<b> </b>
+Thanks for viewing, this lab was creat
