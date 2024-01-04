@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this project, I built a mini honeynet in Azure and ingested log sources from various resources into a Log Analytics workspace, which was then used by Microsoft Sentinel to build attack maps(based on imported GeoIp data), trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 12 hours, applied some security controls to harden the environment, measured metrics for another 12 hours, and then showed the results below.
+In this project, I built a mini honeynet in Azure and ingested logs from various resources into a Log Analytics workspace, which was then used by Microsoft Sentinel to build attack maps(based on imported GeoIp data), trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 12 hours, applied some security controls to harden the environment, measured metrics for another 12 hours, and then showed the results below.
 
 ##Lab Metrics:
 - SecurityEvent (Windows Event Logs)
@@ -24,11 +24,10 @@ In this project, I built a mini honeynet in Azure and ingested log sources from 
 - Microsoft Sentinel
 
 ## Architecture Before Hardening / Security Controls
-<b> For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups configured to <ins>Allow All INBOUND Traffic</ins>, and the storage and key vault had no endpoint protection, leaving them completely vulnerable! </b>
+<b> For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups configured to <ins>Allow All INBOUND Traffic</ins>, and the storage and key vault had no private endpoint protection, leaving them completely vulnerable! </b>
 <b> </b>
 
 ![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/1f0357e8-4889-45a7-9645-943f8bd40d18)
-
 ![AllowAnyRule](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/92a35efd-03fa-4d92-ade6-e7ff2608a93e)
 
 
@@ -36,8 +35,9 @@ In this project, I built a mini honeynet in Azure and ingested log sources from 
 ## Architecture After Hardening / Security Controls
 <b>For the "AFTER" metrics, Network Security Groups were hardened by deleting the previous inbound rule, and by creating a new rule to block ALL traffic except for my IP address. I also created private endpoints on all other resources and created a Network Security Group for the network's subnet. </b>
 <b> </b>
-
+### Hardened Network Topology Below: 
 ![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/5ceafa04-f5a7-4632-be8f-3bc912241abb)
+### Comparison between running <ins>Nslookup</ins> within the network vs outside the network after creating private endpoints ```Notice the Ip address```:
 ![Nslookup](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/48d91258-7a50-4884-a6ad-14bea4b434b7)
 
 
@@ -68,7 +68,7 @@ The following table shows the metrics I measured in my environment for another 1
 
 ![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/0b4bffc2-b962-4a5f-afa1-992ef4cf69b2)
 
-## Results 
+## Results After Hardening
 
 ![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/9b48a96a-19ce-41d1-93ea-29afc9838e62)
 
@@ -77,8 +77,8 @@ The following table shows the metrics I measured in my environment for another 1
 ## Further Hardening Steps: 
 
 - I enabled <ins>Microsoft Defender for Cloud</ins> and followed a few of the configuration recommendations like : 
-  - Enabled multi-factor Authentication
-  - Configured Machines to automatically check for updates
+  - Enabling multi-factor Authentication
+  - Configuring Machines to automatically check for updates
 - I enabled <ins>NIST SP 800-53</ins> and fulfilled the standards associated with <ins>AC-5 Separation of Duties</ins>
 
 <b> </b>
