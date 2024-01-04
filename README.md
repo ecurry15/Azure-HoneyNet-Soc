@@ -56,7 +56,8 @@ Hello everyone! In this project, I built a mini honeynet in Azure and ingested l
 
 The following table shows the metrics I measured in my insecure environment for 12 hours:
 
-![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/79e30e82-613d-461e-aa03-f29e5d429731)
+![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/22971252-39d3-4c45-bfda-7dfc26954ee4)
+
 
 
 ## Attack Maps Before Hardening / Security Controls
@@ -67,11 +68,16 @@ The following table shows the metrics I measured in my insecure environment for 
 
 The following table shows the metrics I measured in my environment for another 12 hours, but after I applied security controls:
 
-![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/0b4bffc2-b962-4a5f-afa1-992ef4cf69b2)
+![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/81b89858-bf29-4337-b808-8a321232d211)
+
+
+
 
 ## Results After Hardening
 
-![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/9b48a96a-19ce-41d1-93ea-29afc9838e62)
+![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/f6052da3-3478-4220-b725-8ed2cc434370)
+
+
 
 
 
