@@ -39,7 +39,8 @@ Hello everyone! In this project, I built a mini honeynet in Azure and ingested l
 ### Hardened Network Topology Below: 
 ![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/5ceafa04-f5a7-4632-be8f-3bc912241abb)
 ### Comparison between running <ins>Nslookup</ins> within the network vs outside the network after creating private endpoints. ```Notice the Ip address```:
-![Nslookup](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/48d91258-7a50-4884-a6ad-14bea4b434b7)
+![image](https://github.com/ecurry15/Azure-HoneyNet-Soc/assets/87204188/9c6bef86-bde5-48a4-8198-5048c08ddb30)
+
 
 
 
